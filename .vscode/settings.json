@@ -1,7 +1,9 @@
 {
     "cSpell.words": [
+        "gemfile",
         "pids",
         "postgres",
-        "postgresql"
+        "postgresql",
+        "precompile"
     ]
 }
