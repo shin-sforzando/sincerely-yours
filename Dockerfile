@@ -12,9 +12,17 @@ RUN apt-get update -qq && \
 RUN mkdir /app
 ENV APP_ROOT /app
 WORKDIR ${APP_ROOT}
+ENV EDITOR nano
 
 ADD ./Gemfile ${APP_ROOT}/Gemfile
 ADD ./Gemfile.lock ${APP_ROOT}/Gemfile.lock
 
 RUN bundle install
 COPY . ${APP_ROOT}
+
+COPY entrypoint.sh /usr/bin/
+RUN chmod +x /usr/bin/entrypoint.sh
+ENTRYPOINT [ "entrypoint.sh" ]
+
+EXPOSE 3000
+CMD [ "rails", "server", "--binding", "0.0.0.0"]
