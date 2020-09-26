@@ -11,9 +11,8 @@ Demo: [https://sincere-list.herokuapp.com/](https://sincere-list.herokuapp.com/)
 
 ## Dependencies
 
-- Docker
-  - docker-compose
-- Rails 6
+- [Docker](https://www.docker.com)
+- [Ruby on Rails](https://rubyonrails.org) ( `6.0.3` or higher)
 
 ## How to
 
