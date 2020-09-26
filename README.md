@@ -2,12 +2,12 @@
 
 A list to manage weddings and funerals.
 
-Demo: [https://sincere-list.herokuapp.com/](https://sincere-list.herokuapp.com/)
-
 - [Dependencies](#dependencies)
 - [How to](#how-to)
   - [Run](#run)
   - [Deploy to Heroku](#deploy-to-heroku)
+- [Misc](#misc)
+  - [Visual Studio Code Remote - Containers](#visual-studio-code-remote---containers)
 
 ## Dependencies
 
@@ -42,3 +42,9 @@ heroku logs --tail --app sincere-list
 ```sh
 heroku run rails console --app sincere-list
 ```
+
+## Misc
+
+### [Visual Studio Code Remote - Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
+
+The configuration files are located in `.devcontainer` .
