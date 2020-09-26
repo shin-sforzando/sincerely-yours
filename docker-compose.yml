@@ -14,7 +14,7 @@ services:
       RAILS_ENV: development
     command: /bin/sh -c "rm -f tmp/pids/server.pid && rails server --environment=development --port 3000 --binding 0.0.0.0"
     volumes:
-      - .:/app
+      - .:/app:cached
     ports:
       - "3000:3000"
     depends_on:
