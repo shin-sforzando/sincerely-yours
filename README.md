@@ -1,2 +1,3 @@
 # sincere-list
-A list to manage weddings and funerals
+
+A list to manage weddings and funerals.
