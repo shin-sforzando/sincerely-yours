@@ -22,6 +22,8 @@ Demo: [https://sincere-list.herokuapp.com/](https://sincere-list.herokuapp.com/)
 docker-compose up --build
 ```
 
+Then `http://localhost:3000/` will be launched in `development` mode.
+
 ### Deploy to Heroku
 
 Make sure that the Docker images are completely stopped.
