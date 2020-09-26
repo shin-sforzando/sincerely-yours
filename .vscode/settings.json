@@ -4,6 +4,8 @@
         "pids",
         "postgres",
         "postgresql",
-        "precompile"
+        "precompile",
+        "webpacker",
+        "woff"
     ]
 }
