@@ -1,16 +1,19 @@
 FROM ruby:latest
 
-ENV LANG=C.UTF-8
-ENV TZ=Asia/Tokyo
+ENV LANG C.UTF-8
+ENV TZ Asia/Tokyo
 
+ENV APT_KEY_DONT_WARN_ON_DANGEROUS_USAGE DontWarn
+ENV DEBCONF_NOWARNINGS yes
 RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
     echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
 
 RUN apt-get update -qq && \
-    apt-get install -y build-essential \
-                       libpq-dev \
-                       nodejs \
-                       yarn
+    apt-get install -y -no-install-recommends build-essential \
+                                              libpq-dev \
+                                              nodejs \
+                                              yarn && \
+    apt-get clean -y
 
 RUN mkdir /app
 ENV APP_ROOT /app
