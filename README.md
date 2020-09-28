@@ -36,6 +36,11 @@ Then `http://localhost:3000/` will be launched in `development` mode.
 
 GitHub Actions deploys automatically.
 
+```sh
+heroku run rails assets:precompile RAILS_ENV=production --app sincerely-yours
+heroku run rails db:migrate --app sincerely-yours
+```
+
 ### Check Heroku
 
 ```sh
