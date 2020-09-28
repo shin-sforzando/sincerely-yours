@@ -30,8 +30,7 @@ RUN bundle install
 
 COPY . ${APP_ROOT}
 
-ENV RAILS_SERVE_STATIC_FILES enabled
-RUN bundle exec rails assets:precompile RAILS_ENV=production
+RUN rails assets:precompile
 
 COPY entrypoint.sh /usr/bin/
 RUN chmod +x /usr/bin/entrypoint.sh
