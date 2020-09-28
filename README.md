@@ -5,6 +5,7 @@ A list to manage weddings and funerals.
 - [Dependencies](#dependencies)
 - [How to](#how-to)
   - [Run](#run)
+  - [Test](#test)
   - [Deploy to Heroku](#deploy-to-heroku)
 - [Misc](#misc)
   - [Visual Studio Code Remote - Containers](#visual-studio-code-remote---containers)
@@ -23,6 +24,10 @@ docker-compose up --build
 ```
 
 Then `http://localhost:3000/` will be launched in `development` mode.
+
+### Test
+
+(T. B. D.)
 
 ### Deploy to Heroku
 

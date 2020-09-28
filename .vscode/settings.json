@@ -1,6 +1,9 @@
 {
   "cSpell.words": [
+    "activestorage",
     "devcontainer",
+    "flexbox",
+    "flexbugs",
     "gemfile",
     "keyfile",
     "pids",
@@ -8,6 +11,7 @@
     "postgresql",
     "precompilation",
     "precompile",
+    "tailwindcss",
     "turbolinks",
     "webpacker",
     "woff"
