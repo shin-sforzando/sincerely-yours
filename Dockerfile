@@ -30,6 +30,8 @@ RUN bundle install
 
 COPY . ${APP_ROOT}
 
+RUN bundle exec rails assets:precompile RAILS_ENV=production
+
 COPY entrypoint.sh /usr/bin/
 RUN chmod +x /usr/bin/entrypoint.sh
 ENTRYPOINT [ "entrypoint.sh" ]
