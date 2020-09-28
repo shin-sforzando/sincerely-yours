@@ -10,12 +10,14 @@ RUN mkdir ${APP_ROOT}
 WORKDIR ${APP_ROOT}
 
 COPY Gemfile* ./
+COPY package*.json ./
 
 RUN apk update && \
     apk upgrade && \
     apk add --no-cache ${RUNTIME_PACKAGES} && \
     apk add --virtual build-dependencies --no-cache ${DEV_PACKAGES} && \
     apk add -u yarn && \
+    yarn install && \
     bundle install --jobs=4 && \
     apk del build-dependencies
 
