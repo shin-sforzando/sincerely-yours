@@ -3,7 +3,7 @@ module.exports = {
     // removeDeprecatedGapUtilities: true,
     // purgeLayersByDefault: true,
   },
-  purge: [ "./app/**/*.html.erb", './app/javascript/**/*.js' ],
+  purge: [ "./app/**/*.html.erb", "./app/helpers/**/*.rb", "./app/javascript/**/*.js" ],
   theme: {
     extend: {},
   },
