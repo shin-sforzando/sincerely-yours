@@ -8,4 +8,4 @@ run:
 release:
   command:
     - rake db:migrate
-    - rake assets:precompile
+    - rake assets:precompile RAILS_ENV=production
