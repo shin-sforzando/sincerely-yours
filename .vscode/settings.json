@@ -1,22 +1,24 @@
 {
-    "cSpell.words": [
-        "devcontainer",
-        "gemfile",
-        "keyfile",
-        "pids",
-        "postgres",
-        "postgresql",
-        "precompilation",
-        "precompile",
-        "webpacker",
-        "woff"
-    ],
-    "cSpell.ignoreWords": [
-        "createuser",
-        "myapp",
-        "mypass",
-        "myuser",
-        "sharedapp",
-        "somedatabase"
-    ]
+  "cSpell.words": [
+    "devcontainer",
+    "gemfile",
+    "keyfile",
+    "pids",
+    "postgres",
+    "postgresql",
+    "precompilation",
+    "precompile",
+    "turbolinks",
+    "webpacker",
+    "woff"
+  ],
+  "cSpell.ignoreWords": [
+    "createuser",
+    "myapp",
+    "mypass",
+    "myuser",
+    "sharedapp",
+    "somedatabase"
+  ],
+  "files.associations": { "*.html.erb": "html" }
 }
