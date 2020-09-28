@@ -19,11 +19,10 @@ RUN apk update && \
     apk add -u yarn && \
     yarn install && \
     bundle install --jobs=4 && \
+    bundle exec rails assets:precompile && \
     apk del build-dependencies
 
 COPY . .
-
-RUN bundle exec rails assets:precompile RAILS_ENV=production
 
 EXPOSE 3000
 
