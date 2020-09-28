@@ -13,7 +13,7 @@ services:
   web:
     build: .
     environment:
-      RAILS_ENV: production
+      RAILS_ENV: development
       RAILS_SERVE_STATIC_FILES: enabled
     command: rails server --port 3000 --binding '0.0.0.0'
     volumes:
