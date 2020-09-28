@@ -30,6 +30,7 @@ RUN bundle install
 
 COPY . ${APP_ROOT}
 
+ENV RAILS_SERVE_STATIC_FILES enabled
 RUN bundle exec rails assets:precompile RAILS_ENV=production
 
 COPY entrypoint.sh /usr/bin/
