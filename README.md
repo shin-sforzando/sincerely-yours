@@ -1,5 +1,7 @@
 # sincerely-yours
 
+![Deploy](https://github.com/shin-sforzando/sincerely-yours/workflows/Deploy/badge.svg)
+
 A list to manage weddings and funerals.
 
 - [Dependencies](#dependencies)
