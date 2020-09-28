@@ -9,6 +9,7 @@ A list to manage weddings and funerals.
   - [Run](#run)
   - [Test](#test)
   - [Deploy to Heroku](#deploy-to-heroku)
+  - [Check Heroku](#check-heroku)
 - [Misc](#misc)
   - [Visual Studio Code Remote - Containers](#visual-studio-code-remote---containers)
 
@@ -33,14 +34,9 @@ Then `http://localhost:3000/` will be launched in `development` mode.
 
 ### Deploy to Heroku
 
-Make sure that the Docker images are completely stopped.
+GitHub Actions deploys automatically.
 
-```sh
-heroku container:push web --app sincerely-yours
-heroku container:release web --app sincerely-yours
-heroku run rails db:migrate --app sincerely-yours
-heroku run rails assets:precompile --app sincerely-yours
-```
+### Check Heroku
 
 ```sh
 heroku logs --tail --app sincerely-yours
