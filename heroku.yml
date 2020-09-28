@@ -4,3 +4,8 @@ build:
 
 run:
   web: bundle exec puma -C config/heroku_puma.rb
+
+release:
+  command:
+    - rake db:migrate
+    - rake assets:precompile
