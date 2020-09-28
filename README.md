@@ -1,4 +1,4 @@
-# sincere-list
+# sincerely-yours
 
 A list to manage weddings and funerals.
 
@@ -29,18 +29,18 @@ Then `http://localhost:3000/` will be launched in `development` mode.
 Make sure that the Docker images are completely stopped.
 
 ```sh
-heroku container:push web --app sincere-list
-heroku container:release web --app sincere-list
-heroku run rails db:migrate --app sincere-list
-heroku run rails assets:precompile --app sincere-list
+heroku container:push web --app sincerely-yours
+heroku container:release web --app sincerely-yours
+heroku run rails db:migrate --app sincerely-yours
+heroku run rails assets:precompile --app sincerely-yours
 ```
 
 ```sh
-heroku logs --tail --app sincere-list
+heroku logs --tail --app sincerely-yours
 ```
 
 ```sh
-heroku run rails console --app sincere-list
+heroku run rails console --app sincerely-yours
 ```
 
 ## Misc
