@@ -1,6 +1,6 @@
 FROM ruby:2.7.1-alpine
 
-ENV RUNTIME_PACKAGES="linux-headers libxml2-dev make gcc libc-dev nodejs tzdata postgresql-dev postgresql git yarn" \
+ENV RUNTIME_PACKAGES="linux-headers libxml2-dev curl make gcc libc-dev nodejs tzdata postgresql-dev postgresql git yarn" \
     DEV_PACKAGES="build-base curl-dev" \
     LANG=C.UTF-8 \
     TZ=Asia/Tokyo \
