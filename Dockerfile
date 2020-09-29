@@ -1,26 +1,24 @@
 FROM ruby:2.7.1-alpine
 
-ENV RUNTIME_PACKAGES="linux-headers libxml2-dev curl make gcc libc-dev nodejs tzdata postgresql-dev postgresql git" \
+ENV RUNTIME_PACKAGES="linux-headers libxml2-dev curl make gcc libc-dev nodejs tzdata postgresql-dev postgresql git yarn" \
     DEV_PACKAGES="build-base curl-dev" \
     LANG=C.UTF-8 \
     TZ=Asia/Tokyo \
     APP_ROOT=/app
 
-RUN mkdir ${APP_ROOT}
 WORKDIR ${APP_ROOT}
 
 COPY Gemfile* ./
-COPY package*.json ./
+RUN echo "gem: --no-rdoc --no-ri" > /.gemrc
 
-RUN apk update && \
-    apk upgrade && \
-    apk add --no-cache ${RUNTIME_PACKAGES} && \
-    apk add --virtual build-dependencies --no-cache ${DEV_PACKAGES} && \
-    apk add -u yarn && \
-    yarn install && \
+RUN apk add --no-cache --update ${RUNTIME_PACKAGES} && \
+    apk add --virtual build-dependencies --no-cache --update ${DEV_PACKAGES} && \
     bundle install --jobs=4 && \
-    bundle exec rails assets:precompile RAILS_ENV=production && \
-    apk del build-dependencies
+    apk del build-dependencies && \
+    rm -rf /usr/local/bundle/cache/*.gem
+
+COPY package*.json yarn.lock ./
+RUN yarn install
 
 COPY . .
 
