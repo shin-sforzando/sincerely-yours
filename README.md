@@ -17,6 +17,7 @@ A list to manage weddings and funerals.
 
 - [Docker](https://www.docker.com)
 - [Ruby on Rails](https://rubyonrails.org) ( `6.0.3` or higher)
+- [Tailwind CSS](https://tailwindcss.com/)
 
 ## How to
 

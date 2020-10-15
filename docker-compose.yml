@@ -10,12 +10,15 @@ services:
     environment:
       POSTGRES_PASSWORD: password
 
-  web:
+  web: &web
     build: .
     environment:
+      NODE_ENV: development
       RAILS_ENV: development
       RAILS_SERVE_STATIC_FILES: enabled
-    command: rails server --port 3000 --binding '0.0.0.0'
+      WEBPACKER_DEV_SERVER_HOST: webpacker
+      WEBPACKER_DEV_SERVER_PUBLIC: 0.0.0.0:3035
+    command: rails server --port 3000 --binding "0.0.0.0"
     volumes:
       - .:/app:cached
     ports:
@@ -24,3 +27,11 @@ services:
       - db
     stdin_open: true
     tty: true
+
+  webpacker:
+    <<: *web
+    command: ./bin/webpack-dev-server
+    depends_on:
+      - web
+    ports:
+      - "3035:3035"
