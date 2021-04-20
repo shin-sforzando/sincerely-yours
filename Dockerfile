@@ -1,24 +1,26 @@
-FROM ruby:2.7.1-alpine
+FROM ruby:3.0.1-buster
 
-ENV RUNTIME_PACKAGES="linux-headers libxml2-dev curl make gcc libc-dev nodejs tzdata postgresql-dev postgresql git yarn" \
-    DEV_PACKAGES="build-base curl-dev" \
+ENV DEBIAN_FRONTEND="noninteractive" \
     LANG=C.UTF-8 \
     TZ=Asia/Tokyo \
     APP_ROOT=/app
 
 WORKDIR ${APP_ROOT}
 
+RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
+    echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
+
 COPY Gemfile* ./
+COPY package*.json yarn.lock ./
+
 RUN echo "gem: --no-rdoc --no-ri" > /.gemrc
 
-RUN apk add --no-cache --update ${RUNTIME_PACKAGES} && \
-    apk add --virtual build-dependencies --no-cache --update ${DEV_PACKAGES} && \
+RUN apt-get update -qq && \
+    apt-get install -yq git make nodejs postgresql-client yarn && \
+    gem update --system && \
     bundle install --jobs=4 && \
-    apk del build-dependencies && \
-    rm -rf /usr/local/bundle/cache/*.gem
-
-COPY package*.json yarn.lock ./
-RUN yarn install
+    yarn install && \
+    apt-get clean
 
 COPY . .
 
